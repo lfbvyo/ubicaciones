@@ -3,5 +3,4 @@ name = "ubicaciones-cr"
 pages_build_output_dir = ".vercel/output/static"
 compatibility_date = "2024-12-05"
 
-[env.production]
 compatibility_flags = [ "nodejs_compat " ]
