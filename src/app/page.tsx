@@ -2,7 +2,7 @@
 import Image from "next/image";
 // pages/index.js
 // English comments only
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import SVGLogo from "./SVGLogo";
 import LinkIcon from "./LinkIcon";
 import { CustomButton } from "./Button/Button";
@@ -13,6 +13,7 @@ type Location = {
 };
 
 export default function Home() {
+  const endOfPageRef = useRef<HTMLDivElement>(null);
   const [selectedProvince, setSelectedProvince] = useState<string | number>();
   const [selectedCanton, setSelectedCanton] = useState<string | number>();
   const [selectedDistrito, setSelectedDistrito] = useState<string | number>();
@@ -83,6 +84,14 @@ export default function Home() {
       )
       .catch((error) => console.error(error));
   }, []);
+
+  useEffect(() => {
+    if (selectedDistrito || selectedCanton || selectedProvince) {
+      setTimeout(() => {
+        endOfPageRef.current?.scrollIntoView({ behavior: "smooth" });
+      }, 400);
+    }
+  }, [selectedDistrito, selectedCanton, selectedProvince]);
 
   return (
     <div className="px-4 min-h-screen flex flex-col justify-start items-center font-ubuntu text-gray-600 ">
@@ -216,6 +225,7 @@ export default function Home() {
           </p>
         </div>
       </div>
+      <div ref={endOfPageRef} />
     </div>
   );
 }
