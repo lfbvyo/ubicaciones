@@ -127,7 +127,7 @@ export default function Home() {
         los distritos según un cantón.
       </p>
       {/*  Main container */}
-      <div className="flex p-4 justify-center items-center">
+      <div className="sm:grid grid-cols-2 p-4 ">
         <div className="w-full max-w-sm rounded px-4 space-y-10">
           {/* Provinces */}
           <div>
@@ -202,7 +202,7 @@ export default function Home() {
         </div>
         <div className=" hidden md:inline-block">
           <Image
-            className="max-h-[75vh] rounded-lg border-2 border-pastel-yellow"
+            className="max-h-[75vh] rounded-lg border-2 border-pastel-yellow  sticky top-8"
             src="/toucan-5854897_1920.jpg"
             layout="responsive"
             alt={"Tucán"}
