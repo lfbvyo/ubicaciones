@@ -128,7 +128,7 @@ export default function Home() {
       </p>
       {/*  Main container */}
       <div className="sm:grid grid-cols-2 p-4 ">
-        <div className="w-full max-w-sm rounded px-4 space-y-10">
+        <div className="w-full max-w-sm rounded px-4 space-y-10 flex flex-col justify-center items-center m-auto">
           {/* Provinces */}
           <div>
             <h2 className="text-xl font-bold text-gray-600 mb-2">Provincias</h2>
