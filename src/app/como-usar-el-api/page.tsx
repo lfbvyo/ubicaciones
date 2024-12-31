@@ -4,7 +4,7 @@ import LinkIcon from "../LinkIcon";
 
 export default function APIInstructions() {
   return (
-    <div className="px-4 min-h-screen flex flex-col justify-start items-center font-ubuntu text-gray-600">
+    <div className="px-4 min-h-screen sm:flex flex-col justify-start items-center font-ubuntu text-gray-600">
       {/* Header */}
       <div className="w-full flex justify-center items-center mb-4 p-2">
         <div className="flex items-center space-x-2">
@@ -109,7 +109,7 @@ export default function APIInstructions() {
                 Devuelve una lista de distritos según el cantón y la provincia
                 seleccionada.
               </p>
-              <code className="block bg-gray-100 text-sm text-gray-800 p-2 rounded">
+              <code className="block bg-gray-100 text-sm text-gray-800 p-2 rounded overflow-x-auto">
                 GET /provincia/:provinciaId/canton/:cantonId/distritos.json
               </code>
               <p className="text-xs text-gray-400 mt-1">
