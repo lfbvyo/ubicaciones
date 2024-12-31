@@ -142,7 +142,12 @@ Este proyecto está bajo la licencia MIT. Consulta el archivo `LICENSE` para má
 
 ## 🤝 Contribuciones
 
-¡Contribuciones, reportes de bugs y sugerencias son bienvenidos! Para más detalles, revisa el repositorio en [GitHub](https://github.com/lfbvyo/ubicaciones).
+¡Contribuciones, reportes de bugs y sugerencias son bienvenidos! Puedes:
+
+- **Crear un Pull Request:** Si tienes una mejora o funcionalidad que agregar.
+- **Abrir un Issue:** Si encuentras un bug o tienes una sugerencia.
+
+Por favor, consulta las [reglas de contribución](https://github.com/lfbvyo/ubicaciones/blob/main/CONTRIBUTING.md) para más detalles.
 
 ---
 
