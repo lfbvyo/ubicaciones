@@ -1,36 +1,153 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# Ubicaciones de Costa Rica
 
-First, run the development server:
+Este proyecto es una aplicación web desarrollada con [Next.js](https://nextjs.org/) que proporciona información sobre las provincias, cantones y distritos de Costa Rica, así como sus códigos postales. También ofrece un API en formato JSON para que desarrolladores puedan integrar esta información en sus aplicaciones.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🚀 Características
+
+- Visualización interactiva de provincias, cantones y distritos.
+- Generación de códigos postales según la selección.
+- API en formato JSON que permite obtener información estructurada.
+- Estilos limpios y consistentes con soporte para dispositivos móviles.
+- Uso de datos dinámicos y componentes reutilizables.
+
+---
+
+## 📦 Instalación
+
+1. Clona este repositorio:
+
+   ```bash
+   git clone https://github.com/lfbvyo/ubicaciones.git
+   cd ubicaciones
+   ```
+
+2. Instala las dependencias:
+
+   ```bash
+   npm install
+   # o
+   yarn install
+   ```
+
+---
+
+## 🛠 Uso en Desarrollo
+
+1. Inicia el servidor de desarrollo:
+
+   ```bash
+   npm run dev
+   # o
+   yarn dev
+   ```
+
+2. Abre [http://localhost:3000](http://localhost:3000) en tu navegador para ver la aplicación.
+
+---
+
+## 🌐 API Endpoints
+
+### 1. Provincias
+Devuelve una lista de todas las provincias.
+
+**URL:**  
+`GET /provincias.json`
+
+**Ejemplo de respuesta:**
+```json
+{
+  "1": "San José",
+  "2": "Alajuela",
+  "3": "Cartago",
+  "4": "Heredia",
+  "5": "Guanacaste",
+  "6": "Puntarenas",
+  "7": "Limón"
+}
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Cantones
+Devuelve una lista de cantones según la provincia.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+**URL:**  
+`GET /provincia/:provinciaId/cantones.json`
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+**Ejemplo de respuesta para `provinciaId=1`:**
+```json
+{
+  "1": "Central",
+  "2": "Escazú",
+  "3": "Desamparados"
+}
+```
 
-## Learn More
+### 3. Distritos
+Devuelve una lista de distritos según la provincia y el cantón.
 
-To learn more about Next.js, take a look at the following resources:
+**URL:**  
+`GET /provincia/:provinciaId/canton/:cantonId/distritos.json`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**Ejemplo de respuesta para `provinciaId=1` y `cantonId=1`:**
+```json
+{
+  "1": "Carmen",
+  "2": "Merced",
+  "3": "Hospital"
+}
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🌟 Cómo Usar el API
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Visita la página ["Cómo usar el API"](http://localhost:3000/api-instructions) para más detalles sobre cómo interactuar con los endpoints.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+---
+
+## 🚀 Despliegue
+
+Este proyecto puede ser desplegado fácilmente en [Vercel](https://vercel.com/) o [Cloudflare Pages](https://pages.cloudflare.com/).
+
+### Despliegue en Vercel
+1. Conecta tu repositorio a [Vercel](https://vercel.com/).
+2. Realiza el despliegue directamente desde su interfaz.
+
+---
+
+## 🖼 Recursos Visuales
+
+Incluye imágenes y datos proporcionados por [Pixabay](https://pixabay.com/) bajo una licencia libre de uso.
+
+---
+
+## 📂 Estructura del Proyecto
+
+```plaintext
+src/
+├── app/               # Estructura principal de Next.js
+├── components/        # Componentes reutilizables
+├── pages/             # Páginas estáticas y dinámicas
+├── public/            # Archivos estáticos (JSON, imágenes)
+└── styles/            # Archivos de estilos (CSS/Tailwind)
+```
+
+---
+
+## 🛡 Licencia
+
+Este proyecto está bajo la licencia MIT. Consulta el archivo `LICENSE` para más detalles.
+
+---
+
+## 🤝 Contribuciones
+
+¡Contribuciones, reportes de bugs y sugerencias son bienvenidos! Para más detalles, revisa el repositorio en [GitHub](https://github.com/lfbvyo/ubicaciones).
+
+---
+
+## 🙌 Agradecimientos
+
+- [Pixabay](https://pixabay.com/) por las imágenes.
+- Inspiración de [Next.js](https://nextjs.org/) y la comunidad de código abierto.
+

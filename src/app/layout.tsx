@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
-
 export const metadata: Metadata = {
-  title: "API de Ubicaciones de Costa Rica",
-  description: "Documentación del API de Ubicaciones para obtener provincias, cantones y distritos de Costa Rica",
+  title: "Ubicaciones de Costa Rica",
+  description:
+    "Documentación del API de Ubicaciones para obtener provincias, cantones y distritos de Costa Rica",
+  icons: { icon: "/favicon.svg" },
 };
 
 export default function RootLayout({
@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={inter.className}>{children}</body>
+      <body className="md:bg-[#fbfceb]">{children}</body>
     </html>
   );
 }
