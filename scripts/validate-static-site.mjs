@@ -7,7 +7,9 @@ const requiredFiles = [
   "app.js",
   "como-usar-el-api/index.html",
   "favicon.svg",
+  "llms.txt",
   "provincias.json",
+  "robots.txt",
   "_headers",
 ];
 

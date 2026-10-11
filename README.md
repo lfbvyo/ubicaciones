@@ -41,6 +41,8 @@ public/
 ├── index.html
 ├── app.js
 ├── como-usar-el-api/index.html
+├── llms.txt
+├── robots.txt
 ├── provincias.json
 └── provincia/<id>/...
 ```
