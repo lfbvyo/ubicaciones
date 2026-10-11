@@ -1,0 +1,6 @@
+# Public website and open JSON API: allow all compliant crawlers.
+User-agent: *
+Allow: /
+
+# Permit search indexing and real-time AI retrieval while reserving training rights.
+Content-Signal: search=yes, ai-input=yes, ai-train=no
