@@ -55,7 +55,7 @@ Cloudflare Pages está conectado directamente a este repositorio:
 
 - rama de producción: `main`
 - comando de build: `npm run build`
-- directorio de salida: `public`
+- directorio de salida: `.vercel/output/static`
 
 Los previews y despliegues se crean desde la integración de GitHub de Cloudflare, por lo que el repositorio no necesita secretos ni tokens de Cloudflare.
 

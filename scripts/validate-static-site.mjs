@@ -1,7 +1,8 @@
-import { access, readFile } from "node:fs/promises";
+import { access, cp, mkdir, readFile, rm } from "node:fs/promises";
 import { join } from "node:path";
 
 const outputDirectory = "public";
+const pagesOutputDirectory = join(".vercel", "output", "static");
 const requiredFiles = [
   "index.html",
   "app.js",
@@ -44,6 +45,10 @@ for (const provinceId of Object.keys(provinces)) {
   }
 }
 
+await rm(pagesOutputDirectory, { recursive: true, force: true });
+await mkdir(join(".vercel", "output"), { recursive: true });
+await cp(outputDirectory, pagesOutputDirectory, { recursive: true });
+
 console.log(
-  `Validated static site: ${Object.keys(provinces).length} provinces, ${cantonCount} cantons, ${districtCount} districts.`,
+  `Validated and prepared static site: ${Object.keys(provinces).length} provinces, ${cantonCount} cantons, ${districtCount} districts.`,
 );
