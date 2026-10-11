@@ -1,0 +1,17 @@
+# Ubicaciones de Costa Rica
+
+> Open, static JSON API for Costa Rica's provinces, cantons, districts, and postal codes. No API key is required and CORS is enabled.
+
+## Documentation
+
+- [Website](https://ubicaciones.paginasweb.cr/): Project overview and interactive explorer.
+- [API guide](https://ubicaciones.paginasweb.cr/como-usar-el-api/): Endpoint documentation and examples.
+- [Source repository](https://github.com/lfbvyo/ubicaciones): Data, source code, contribution guide, and MIT license.
+
+## API
+
+- [All provinces](https://ubicaciones.paginasweb.cr/provincias.json): `GET /provincias.json`
+- [Cantons in a province](https://ubicaciones.paginasweb.cr/provincia/1/cantones.json): `GET /provincia/:provinciaId/cantones.json`
+- [Districts in a canton](https://ubicaciones.paginasweb.cr/provincia/1/canton/1/distritos.json): `GET /provincia/:provinciaId/canton/:cantonId/distritos.json`
+
+All endpoints return JSON and accept unauthenticated `GET` requests.

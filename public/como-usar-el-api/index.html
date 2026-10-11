@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Cómo usar el API — Ubicaciones de Costa Rica</title>
+<meta name="description" content="Ejemplos de uso del API de ubicaciones de Costa Rica: provincias, cantones y distritos en formato JSON."/>
+<link rel="icon" href="/favicon.svg"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+  :root{
+    --bg:#0B0F19; --surface:#12172A; --cyan:#22D3EE; --orange:#E95420;
+    --text:#F4F6FB; --muted:#9AA0AC; --border:rgba(255,255,255,.08);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
+  a{color:inherit;text-decoration:none}
+  nav{position:sticky;top:0;z-index:20;backdrop-filter:blur(12px);background:rgba(11,15,25,.82);border-bottom:1px solid var(--border)}
+  .nav-in{max-width:860px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700}
+  .logo{width:30px;height:30px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#67e8f9,var(--cyan) 40%,#0e7490);display:grid;place-items:center;box-shadow:0 0 24px rgba(34,211,238,.35)}
+  .logo svg{width:17px;height:17px}
+  .nav-right{display:flex;gap:22px;color:var(--muted);font-size:14px;font-weight:500}
+  .nav-right a:hover{color:var(--cyan)}
+  main{max-width:860px;margin:0 auto;padding:48px 24px 32px}
+  h1{font-size:36px;font-weight:800;letter-spacing:-.02em;margin-bottom:12px}
+  h1 .accent{color:var(--orange)}
+  .lede{color:var(--muted);font-size:16px;max-width:640px;margin-bottom:40px}
+  h2{font-size:24px;font-weight:750;margin:44px 0 10px}
+  h3{font-size:17px;font-weight:700;margin:28px 0 8px;color:var(--cyan)}
+  p{color:var(--muted);margin-bottom:12px}
+  code.inline{font-family:"JetBrains Mono",monospace;font-size:13px;color:var(--cyan);background:rgba(34,211,238,.08);padding:2px 7px;border-radius:6px}
+  .endpoint{display:flex;align-items:center;gap:12px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 16px;margin:10px 0;font-family:"JetBrains Mono",monospace;font-size:13px;overflow-x:auto;white-space:nowrap}
+  .method{color:#fff;background:#059669;font-size:11px;font-weight:700;padding:3px 8px;border-radius:6px}
+  pre{background:#0A0D15;border:1px solid var(--border);border-left:3px solid rgba(34,211,238,.45);border-radius:12px;padding:18px;font-family:"JetBrains Mono",monospace;font-size:13px;line-height:1.55;overflow-x:auto;margin:14px 0 6px;color:#C9D4E8}
+  .cap{font-size:12px;color:var(--muted);margin-bottom:26px}
+  footer{border-top:1px solid var(--border);margin-top:56px;padding:28px 24px 40px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;max-width:860px;margin-left:auto;margin-right:auto}
+  footer a:hover{color:var(--cyan)}
+</style>
+</head>
+<body>
+<nav><div class="nav-in">
+  <a class="brand" href="/"><span class="logo"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><path d="M12 2l8 4.5v11L12 22l-8-4.5v-11L12 2z"/><path d="M12 12l8-4.5M12 12v10M12 12L4 7.5"/></svg></span>UBICACIONES</a>
+  <div class="nav-right">
+    <a href="/#explorer">Explorar</a>
+    <a href="/#api">API</a>
+    <a href="https://github.com/lfbvyo/ubicaciones" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</div></nav>
+
+<main>
+  <h1>Cómo usar el API<span class="accent">.</span></h1>
+  <p class="lede">Esta API ofrece datos en formato JSON sobre las provincias, cantones y distritos de Costa Rica. Sin API key, con CORS abierto y respuestas cacheadas.</p>
+
+  <h2>Endpoints disponibles</h2>
+
+  <h3>1. Provincias</h3>
+  <p>Devuelve todas las provincias en formato JSON:</p>
+  <div class="endpoint"><span class="method">GET</span> /provincias.json</div>
+  <p>Ejemplo de respuesta:</p>
+  <pre>{
+  "1": "San José",
+  "2": "Alajuela",
+  "3": "Cartago",
+  "4": "Heredia",
+  "5": "Guanacaste",
+  "6": "Puntarenas",
+  "7": "Limón"
+}</pre>
+
+  <h3>2. Cantones</h3>
+  <p>Devuelve los cantones de una provincia (<code class="inline">provinciaId</code> del 1 al 7):</p>
+  <div class="endpoint"><span class="method">GET</span> /provincia/:provinciaId/cantones.json</div>
+  <p>Ejemplo de respuesta para <code class="inline">provinciaId=1</code>:</p>
+  <pre>{
+  "1": "Central",
+  "2": "Escazú",
+  "3": "Desamparados",
+  ...
+}</pre>
+  <p class="cap">Respuesta completa incluye los 82 cantones del país según la provincia consultada.</p>
+
+  <h3>3. Distritos</h3>
+  <p>Devuelve los distritos de un cantón (<code class="inline">cantonId</code> dentro de la provincia):</p>
+  <div class="endpoint"><span class="method">GET</span> /provincia/:provinciaId/canton/:cantonId/distritos.json</div>
+  <p>Ejemplo de respuesta para <code class="inline">provinciaId=1</code> y <code class="inline">cantonId=1</code>:</p>
+  <pre>{
+  "1": "Carmen",
+  "2": "Merced",
+  "3": "Hospital",
+  ...
+}</pre>
+  <p class="cap">El código postal se forma como <code class="inline">provincia + cantón + distrito</code>: por ejemplo, Carmen (1/1/1) es <code class="inline">10101</code>.</p>
+</main>
+
+<footer>
+  <span>ubicaciones.paginasweb.cr · parte de <a href="https://rutacorta.com" target="_blank" rel="noopener">Ruta Corta</a></span>
+  <span><a href="/">← Volver al explorador</a></span>
+</footer>
+</body>
+</html>

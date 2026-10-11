@@ -1,0 +1,6 @@
+/*
+  Access-Control-Allow-Origin: *
+  Access-Control-Allow-Headers: Content-Type
+  Access-Control-Allow-Methods: GET, OPTIONS
+  X-Content-Type-Options: nosniff
+  Cache-Control: public, max-age=172800, must-revalidate
